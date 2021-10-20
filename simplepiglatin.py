@@ -1,10 +1,11 @@
 def pig_it(text):
     pigit =''
-    splt = text.split(' ')
-    for x in splt:
-        if x == '!' or x == '?':
+    for x in text.split():
+        if x.isalpha():
+            x = x[1:] + x[0] + "ay"
             pigit += x + ' '
         else:
-            x = x[1:len(x)]+x[0]+"ay"
-            pigit += x+' '
+            pigit += x + ' '
     return pigit[:-1]
+
+print(pig_it('Hello Diego Kisai'))
